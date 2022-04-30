@@ -3,6 +3,7 @@ package sg.com.garethfong.tiptime
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.inputmethod.InputMethodManager
@@ -28,8 +29,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun calculateTip(){
-        val cost = binding.costOfServiceEditText.toString().toDoubleOrNull()
-
+        val cost = binding.costOfServiceEditText.text.toString().toDoubleOrNull()
         if(cost==null||cost==0.0) {
             displayTip(0.0)
             return
